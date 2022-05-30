@@ -1,0 +1,112 @@
+#footer {
+    .primary__footer {
+        padding: 80px 15px;
+        background: $color-black-2;
+        .footer__logo {
+            img {
+                height: 100px;
+                width: auto;
+                margin-bottom: 15px;
+            }
+        }
+        p {
+            color: $color-gray-0;
+            line-height: 30px;
+        }
+        .text__uppercase {
+            color: $color-white-0;
+            text-transform: uppercase;
+            letter-spacing: $letter-spacing-0;
+            font-size: $fs-1 + 2;
+            margin-bottom: 30px;
+        }
+        ul {
+            list-style-type: none;
+            li {
+                border-bottom: 1px solid $color-black-0;
+                a {
+                    color: $color-gray-5;
+                    line-height: 45px;
+                    text-decoration: none;
+                    font-size: 15px;
+                    transition: all 0.3s;
+                    i {
+                        padding-right: 15px;
+                    }
+                    &:hover {
+                        color: $color-yellow-0;
+                    }
+                }
+            }
+        }
+        .r__work {
+            li {
+                border: none;
+                a {
+                    float: left;
+                    margin: 0 10px 10px 0;
+                    img {
+                        width: 55px;
+                        height: 55px;
+                    }
+                }
+            }
+        }
+    }
+    .secondary__footer {
+        padding: 40px 0;
+        background-color: #1b1b1b;
+        border-top: 1px solid #2c2c2c;
+        span {
+            color: $color-gray-5;
+            a {
+                color: $color-white-0;
+                text-decoration: none;
+                transition: all 0.3s;
+                &:hover {
+                    color: $color-yellow-0;
+                }
+            }
+        }
+        .icon {
+            .circle {
+                position: absolute;
+                right: 0;
+                a {
+                    color: $color-gray-5;
+                }
+                i {
+                    width: 35px;
+                    height: 35px;
+                    text-align: center;
+                    border: 1px solid #5a5a5a;
+                    color: #5a5a5a;
+                    border-radius: 50%;
+                    line-height: 35px;
+                    margin: 0 0 0 15px;
+                    transition: all 0.3s;
+                    &:hover {
+                        color: $color-white-0;
+                        border: 1px solid transparent;
+                        background: #5a5a5a;
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsive("medium") {
+    #footer {
+        .secondary__footer {
+            padding: 50px 0 70px 0;
+            // border: none;
+            .icon {
+                .circle {
+                    position: absolute;
+                    left: 0;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+}

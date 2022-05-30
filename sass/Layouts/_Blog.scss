@@ -1,0 +1,104 @@
+.blog {
+    .blog__info {
+        margin-bottom: $mg-7;
+        .blog__left {
+            position: relative;
+            padding: 0 $pd-2;
+            .info {
+                position: absolute;
+                top: 86%;
+                width: 89.5%;
+                background-color: $color-black-6;
+                padding: $pd-0;
+                color: $color-white-0;
+            }
+        }
+        .blog__right {
+            padding: $pd-2 $pd-2;
+            letter-spacing: $letter-spacing-0;
+            span {
+                color: $color-gray-11;
+                transition: all 0.5s;
+                a {
+                    text-decoration: none;
+                    font-size: $fs-1;
+                    color: $color-gray-11;
+                    &:hover {
+                        color: $color-yellow-0;
+                    }
+                }
+            }
+            .blog__work {
+                margin: $mg-1 0;
+                a {
+                    color: $color-black-2;
+                    text-decoration: none;
+                    font-size: $fs-6;
+                    padding: $pd-0;
+                }
+            }
+            p {
+                color: $color-gray-0;
+                padding: $pd-0;
+                margin: $mg-2 0 $mg-5 0;
+                line-height: 30px;
+                font-size: $fs-1 + 2;
+                letter-spacing: 0;
+            }
+            a {
+                padding: $pd-0;
+                color: $color-gray-12;
+                text-decoration: none;
+                transition: all 0.5s;
+                &:hover {
+                    color: $color-black-2;
+                }
+                i {
+                    align-items: center;
+                    padding-left: $pd-0;
+                }
+            }
+        }
+    }
+}
+@include responsive("medium") {
+    .blog {
+        .heading-title {
+            h3 {
+                font-size: 18px;
+                &::after {
+                    top: 35px;
+                }
+            }
+        }
+        .blog__info {
+            .blog__left {
+                img {
+                    width: 100%;
+                }
+                .info {
+                    width: 91.6%;
+                    top: 91.6%;
+                }
+            }
+            .blog__right {
+                padding: 30px 20px;
+            }
+        }
+    }
+}
+@include responsive("small") {
+    .blog {
+        .blog__info {
+            .blog__left {
+                img {
+                    width: 100%;
+                }
+                .info {
+                    width: 85.6%;
+                    top: 84%;
+                }
+            }
+        }
+    }
+}

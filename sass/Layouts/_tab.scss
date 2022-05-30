@@ -1,0 +1,130 @@
+.tabs {
+    padding-bottom: $pd-7;
+    display: inline-block;
+    width: 100%;
+    padding-top: 100px;
+    .tabs__content {
+        padding: 100px 0;
+        background-image: url(http://massivemarkup.lab.themebucket.net/assets/img/pattern-2.png);
+        width: 100%;
+        background-repeat: repeat;
+        background-attachment: fixed;
+
+        .nav-pills {
+            li + li {
+                margin-left: 20px;
+            }
+            .nav-item {
+                position: relative;
+
+                .nav-link {
+                    color: #434343;
+                    position: relative;
+                    border-radius: 0;
+                    background-color: rgba(34, 34, 34, 0.05);
+                    padding: 35px 70px;
+                    transition: all 0.5s;
+                    i {
+                        font-size: 36px;
+                        display: block;
+                    }
+                    &.active,
+                    &:hover {
+                        background-color: white;
+                        color: #222;
+                        &::after {
+                            opacity: 1;
+                        }
+                    }
+                    &::after {
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        border-top: 10px solid #fff;
+                        position: absolute;
+                        bottom: -10px;
+                        left: 45%;
+                        opacity: 0;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+        }
+        .tab-content {
+            padding: 30px 0;
+            line-height: 30px;
+            .tab-pane-heading {
+                margin-bottom: 50px;
+                span {
+                    letter-spacing: 2px;
+                    color: #7e7e7e;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+                h2 {
+                    font-size: 30px;
+                    letter-spacing: 2px;
+                    font-weight: normal;
+                    text-transform: uppercase;
+                }
+            }
+            .tab-pane-text {
+                p {
+                    font-weight: 400;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+@include responsive("medium") {
+    .tabs {
+        .tabs__content {
+            .tab-pane {
+                .tab-pane-heading {
+                    h2 {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsive("small") {
+    .tabs {
+        .tabs__content {
+            .container {
+                .nav-pills {
+                    li {
+                        // padding-right:15px;
+                        margin-left: 15px;
+                        margin-bottom: 10px;
+                    }
+                    .nav-item {
+                        .nav-link {
+                            padding: 40px 165px;
+                            &::after {
+                                left: 47%;
+                            }
+                            i {
+                                text-align: center;
+                            }
+                        }
+                    }
+                    .fix {
+                        .nav-link {
+                            padding: 40px 160px;
+                        }
+                    }
+                }
+                .tab-content {
+                    .tab-pane {
+                        padding: 0 15px;
+                    }
+                }
+            }
+        }
+    }
+}

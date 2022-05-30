@@ -1,0 +1,64 @@
+@mixin styleText($fs, $fw, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+}
+@mixin styleHoverInfo($top,$left) {
+    position: absolute;
+    top:$top;
+    left: $left;
+}
+
+@mixin progressBarStyle($ariaWidth) {
+    width: $ariaWidth;
+    animation: progress 2s 1;
+    position: relative;
+    .skill__text{
+        &::before{
+            content: "#{$ariaWidth}";
+            height: 20px;
+            @include styleText(10px,normal,$color-black-2);
+            background-color: $color-gray-8;
+            position: absolute;
+            top :-30px;
+            right: -5px;
+            text-align: center;
+            line-height: $line-height-0;
+            padding: 0 $pd-0 - 2;
+            border-radius: 10px;
+            letter-spacing: 0;
+        }
+    }
+    .skill__arrow{
+        &::before{
+            content: " ";
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 4px solid $color-gray-8;
+            position: absolute;
+            top: -11px;
+            right:7px;
+        }
+    }
+
+    @keyframes progress {
+        0%{
+            width: 0;
+        }
+        to{
+            width:$ariaWidth;
+        }
+    }
+}
+
+@mixin responsive($screen) {
+    @if map-has-key($map:$breakpoints, $key:$screen){
+        $value: map-get($map:$breakpoints , $key:$screen);
+        @media screen and (max-width:$value){
+            @content;
+        }
+    }
+    @else{
+        @warn "`{$screen}` isn't exist in breakpoints";
+    }
+}

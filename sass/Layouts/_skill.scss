@@ -1,0 +1,129 @@
+.skill {
+    background-image: url("http://massivemarkup.lab.themebucket.net/assets/img/parallax/4.jpg");
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    color: $color-white-0;
+    position: relative;
+    .dark__overplay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .col-lg-6 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 $pd-2 - 1;
+        .skill__left {
+            letter-spacing: $letter-spacing-0 + 1;
+            font-size: $fs-7;
+        }
+    }
+    .skill__right {
+        padding: 0 $pd-2;
+        h4 {
+            font-size: $fs-5;
+            margin-bottom: $mg-5;
+            letter-spacing: $letter-spacing-1;
+        }
+        p {
+            line-height: 30px;
+            margin-bottom: $mg-5;
+        }
+        .skill__progress {
+            padding-top: $pd-2;
+            .skill__progressContent {
+                background-color: $color-gray-8;
+                .skill__progressNow {
+                    color: $color-black-2;
+                    margin-top: $mg-1;
+                    margin-bottom: $mg-6;
+                    h6 {
+                        display: flex;
+                        align-items: center;
+                        text-align: left;
+                        padding-left: $pd-0;
+                        font-size: $fs-0;
+                        margin: 0;
+                        height: 20px;
+                        letter-spacing: $letter-spacing-0;
+                    }
+                    &.skill__progressNow1 {
+                        animation: progress1 2s 1;
+                        @include progressBarStyle(80%);
+                        background-color: $color-white-0;
+                    }
+                    &.skill__progressNow2 {
+                        animation: progress2 2s 1;
+                        @include progressBarStyle(90%);
+                        background-color: $color-white-0;
+                    }
+                    &.skill__progressNow3 {
+                        animation: progress3 2s 1;
+                        @include progressBarStyle(75%);
+                        background-color: $color-white-0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("medium") {
+    .skill {
+        .dark__overplay{
+            background: none;
+        }
+        .skill__left {
+            width: 100%;
+            height: 500px;
+            h3 {
+                position: absolute;
+                font-size: 18px;
+                letter-spacing: 6px;
+                top: 50%;
+                left: 30%;
+                // vertical-align: middle;
+            }
+        }
+        .skill__right{
+            h4{
+                letter-spacing: 2px;
+            }
+        }
+    }
+}
+
+@include responsive("small") {
+    .skill {
+        .dark__overplay{
+            background: none;
+        }
+        .skill__left {
+            width: 100%;
+            height: 400px;
+            h3 {
+                width: 100%;
+                position: absolute;
+                font-size: 18px;
+                letter-spacing: 6px;
+                top: 50%;
+                left: 12%;
+                // vertical-align: middle;
+            }
+        }
+        .skill__right{
+            h4{
+                letter-spacing: 2px;
+            }
+        }
+    }
+}

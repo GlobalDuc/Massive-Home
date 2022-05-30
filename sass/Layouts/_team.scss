@@ -1,0 +1,216 @@
+.team {
+    padding-bottom: $pd-7;
+    .team__top {
+        margin-bottom: 70px;
+    }
+    .team__bottom {
+        .team__item {
+            padding: 0 30px;
+        }
+        .team__member {
+            overflow: hidden;
+            position: relative;
+            &:hover {
+                .team__hover {
+                    opacity: 1;
+
+                    .team__hover-top {
+                        transform: translateY(35%);
+                        opacity: 1;
+                    }
+                    .team__hover-bottom {
+                        bottom: 10%;
+                        opacity: 1;
+                    }
+                }
+            }
+            .team__img {
+                position: relative;
+
+                display: block;
+                img {
+                    width: 100%;
+                }
+                .team__intro {
+                    width: 70%;
+                    bottom: 30px;
+                    right: 0;
+                    position: absolute;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    text-align: right;
+                    padding: 10px 20px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    h5 {
+                        margin-bottom: 0;
+                        font-weight: normal;
+                        font-size: 14px;
+                    }
+                    span {
+                        color: rgba(255, 255, 255, 0.5);
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        .team__hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 20px solid rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+            font-weight: normal;
+            opacity: 0;
+            transition: all 0.3s;
+            .team__hover-top {
+                transition: all 0.3s 0.2s;
+                position: absolute;
+                top: 0;
+                padding: 0 20px;
+                transform: translateY(-55%);
+                opacity: 0;
+                h4 {
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    color: #222;
+                    letter-spacing: 4px;
+                    margin-bottom: 25px;
+                }
+                p {
+                    color: #7e7e7e;
+                    font-size: 14px;
+                    line-height: 30px;
+                }
+            }
+            .team__hover-bottom {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                font-weight: 400;
+                font-size: 16px;
+                transform: translateY(45%);
+                transition: all 0.3s 0.2s;
+                opacity: 0;
+                a {
+                    transition: all 0.3s;
+                    margin: 0 10px;
+                    color: #333;
+                    &:hover {
+                        color: #d6b161;
+                    }
+                }
+            }
+        }
+        .promo-box {
+            margin-top: 100px;
+            background-color: #f5f5f5;
+            padding: 40px;
+            .promo-info {
+                h4 {
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 18px;
+                    color: #333;
+                    font-weight: normal;
+                    span {
+                        font-size: 18px;
+                        display: inline;
+                        color: #d6b161;
+                    }
+                }
+                span {
+                    display: block;
+                    margin-top: 10px;
+                    color: #7e7e73;
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+            }
+            .promo-button {
+                button {
+                    text-transform: uppercase;
+                    padding: 15px 30px;
+                    background-color: #222;
+                    color: #fff;
+                    border: none;
+                    letter-spacing: 1px;
+                    transition: all 0.5s;
+                    // display: block;
+                    &:hover {
+                        background-color: #d6b161;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive("medium") {
+    .team {
+        .container {
+            padding: 0;
+            .team__top {
+                h3 {
+                    font-size: 18px;
+                }
+            }
+            .heading-title h3::after {
+                top: 35px;
+            }
+            .team__bottom {
+                .team__item {
+                    .promo-info {
+                        width: 70%;
+                    }
+                    .team__member {
+                        .team__hover {
+                            .team__hover-top {
+                                transform: translateY(200%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responsive("small") {
+    .team {
+        .team__top {
+            width: 100%;
+            padding: 0 40px;
+            h3 {
+                letter-spacing: 2px;
+            }
+        }
+        .team__bottom {
+            padding: 0 15px;
+            .team__item {
+                .promo-box {
+                    margin: 100px 0 0 0;
+                    .promo-info {
+                        width: 100%;
+                        padding: 0;
+                        padding-bottom: 15px;
+                    }
+                    .promo-button{
+                        padding: 0;
+                        font-size: 12px;
+                    }
+                }
+                .team__member {
+                    .team__hover {
+                        .team__hover-top {
+                            transform: translateY(70px) !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+.design {
+    .design__bottom {
+        .design__items {
+            padding: 0 $pd-2;
+            .border {
+                padding: $pd-2;
+                position: relative;
+                i {
+                    position: absolute;
+                    top: -30px;
+                    left: 30px;
+                    width: 60px;
+                    height: 60px;
+                    text-align: center;
+                    border-radius: 4px;
+                    background-color: $color-black-2;
+                    line-height: $line-height-11;
+                    color: $color-white-0;
+                    font-size: $fs-7;
+                    transition: 0.3s;
+                }
+                h4 {
+                    @include styleText($fs-5, $fw-0, $color-black-0);
+                    letter-spacing: 1px;
+                    margin: $mg-4 0;
+                }
+                p {
+                    color: $color-gray-0;
+                    margin-bottom: 0;
+                }
+                &:hover > i {
+                    background: $color-yellow-0;
+                }
+            }
+        }
+    }
+}
+@include responsive("medium") {
+    .design {
+        .design__top {
+            h3{
+                font-size: 18px;
+                letter-spacing: $letter-spacing-0;
+                margin-bottom: 30px;
+            }
+        }
+        .design__bottom{
+           .design__items{
+               margin-bottom: 50px;
+           } 
+        }
+    }
+}
+@include responsive("small") {
+    .design {
+        padding: 50px 0;
+        .design__top {
+            width: 100%;
+            h3{
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+        }
+        .design__bottom{
+           .design__items{
+               margin-bottom: 50px;
+           } 
+        }
+    }
+}

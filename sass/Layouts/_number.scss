@@ -1,0 +1,47 @@
+.number{
+
+    padding: 100px 0;
+    background-color: #1b1b1b;
+    .numbers__item{
+        padding: 0 15px;
+        text-align: center;
+        color: #fff;
+        .number__icon{
+            font-size: 36px;
+            i{
+                padding-right: 10px;
+            }
+            span{
+                font-weight: normal;
+                letter-spacing: 2px;
+            }
+        }
+        .number__text{
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+       
+    }
+}
+@include responsive("medium"){
+    .number{
+        .numbers__item{
+            .number__icon{
+                font-size: 26px;
+                margin-bottom: 10px;
+            }
+            .number__text{
+                p{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+@include responsive("small"){
+    .number{
+        .numbers__item{
+            padding: 30px 0;
+        }
+    }
+}
